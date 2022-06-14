@@ -6,12 +6,15 @@ Tested on Windows 10 and Linux (Ubuntu 19).
 How to use
 ----------
 
-- Install Python 3 from official site. With adding it to PATH variable. 
+- Install Python 3 from official site. With adding it to PATH variable.
+  Plugin will try to run "python3" or "python", so one of them must be runnable.
+
 - Install Flask in Python.
-  Run in terminal:
+
+  On Windows, run in console:
     pip install flask
     pip install markdown2
-  on Unix:
+  On Unix, run in terminal:
     pip3 install flask
     pip3 install markdown2
 
@@ -24,11 +27,13 @@ How to use
   Browser should open at http://127.0.0.1:5000/view
 
 After that, just edit some HTML file.
-Server will detect your changes (after last editing, make small pause)
+Server will detect your changes (not immediately: after editing, make small pause)
 and browser should show the preview.
 
-Lexer names handled: any with "HTML", "Jinja2" and "Markdown".
+These lexer names are handled: any with "HTML" word, "Jinja2" and "Markdown".
 
+Note: after the opening of HTML file, browser will not show the preview,
+you need to edit the file a little.
 Note: on clicking any link in the browser, live preview stops, until you return to the 
 http://127.0.0.1:5000/view
 
