@@ -80,7 +80,9 @@ class Command:
     def start_ex(self, python):
 
         if is_win:
-            self.process=Popen([python,script,self.port])
+            cmd=[python,script,self.port]
+            print('HTML Live Preview: running', cmd)
+            self.process=Popen(cmd)
         else:
             os.system(self.server_command.format(python=python, script=script, port=self.port))
         self.server_running=True
@@ -93,7 +95,7 @@ class Command:
             return
 
         try:
-            self.start_ex('python3')
+            self.start_ex('python3' if not is_win else 'python.exe')
         except:
             try:
                 self.start_ex('python')
